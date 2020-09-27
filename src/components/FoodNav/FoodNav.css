@@ -1,0 +1,24 @@
+.food__navbar {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.food__navbar__link {
+    margin: 5px 40px;
+    color: #000;
+}
+
+.food__navbar__link:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.food__navbar__link:hover {
+    color: red;
+}
+
+.food__navbar__active__link {
+    border-bottom: 3px solid red;
+    color: red;
+}

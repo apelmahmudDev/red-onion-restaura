@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
 import Lunch from '../Lunch/Lunch';
+import './LunchStore.css';
 
 const LunchStore = () => {
     const [lunches, setLunches] = useState([]);

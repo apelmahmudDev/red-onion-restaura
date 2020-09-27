@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Lunch.css';
 
 const Lunch = (props) => {
-    const {img, name, price} = props.lunch;
+	const {img, name, price, key} = props.lunch;
 	return (
-		<>
+		<Link to={`/foodDetails/food/${key}`}>
 			<div class="card">
 				<img
 					src={img}
@@ -21,7 +22,7 @@ const Lunch = (props) => {
 					</h5>
 				</div>
 			</div>
-		</>
+		</Link>
 	);
 };
 

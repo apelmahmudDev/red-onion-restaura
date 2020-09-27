@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './BreakFastStore.css';
 import fakeData from '../../fakeData';
 import BreakFast from '../BreakFast/BreakFast';
 
@@ -11,7 +12,7 @@ const BreakFastStore = () => {
     },[])
     return (
         <div className="container">
-          <div className="card-deck">
+          <div className="card-deck card-wrap">
             {
                breakFasts.map(breakFast => <BreakFast breakFast={breakFast}></BreakFast>)
             }
