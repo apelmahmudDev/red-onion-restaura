@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './FoodDetails.css';
 import { useParams } from 'react-router-dom';
 import fakeData from '../../fakeData';
 
@@ -21,13 +22,22 @@ const FoodDetails = () => {
         photo = selectedFood.img;
     }
 
+    const handeAddFood = () => {
+        console.log("clicked");
+      }
+
     return (
         <div className="container">
             <div className="row d-flex align-items-center">
                 <div className="col-md-6">
                     <h1 className="font-weight-bold">Light {category}</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tempora corporis et esse voluptatum, vero, ipsam aspernatur, iure vel doloribus obcaecati. Cum est quibusdam alias numquam placeat repellendus tenetur eligendi?</p>
-                    <h2 className="font-weight-bold">${price}</h2>
+                    <h2>${price}</h2>
+                    {/* FOOD ADD TO CART BUTTON */}
+                    <button
+                    className="btn btn-danger main-button"
+                    onClick={handeAddFood()}
+                    >Add</button>
                 </div>
                 <div className="col-md-6">
                     <img src={photo} alt="" className="img-fluid"/>
