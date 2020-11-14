@@ -3,3 +3,17 @@
     width: 100px;
     border-radius: 20px;
 }
+
+.quantity {
+    padding: 0 5px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+}
+
+.quantity span {
+    font-weight: bold;
+}
+
+.quantity button:focus {
+    box-shadow: none;
+}

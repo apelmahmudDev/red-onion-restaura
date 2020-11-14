@@ -1,0 +1,27 @@
+.table td, .table th {
+    border-top: transparent;
+}
+
+.table-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+    background: #F5F5F5;
+    border-radius: 20px;
+}
+
+.table-row span {
+    font-weight: bold;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.table-row button {
+    font-size: 0.8em;
+}
+
+.table-row button:focus {
+    box-shadow: none;
+}

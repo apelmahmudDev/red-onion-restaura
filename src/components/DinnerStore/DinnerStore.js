@@ -12,7 +12,7 @@ const DinnerStore = () => {
 
 	return (
 		<div className="container">
-			<div class="row row-cols-1 row-cols-md-3">
+			<div className="row row-cols-1 row-cols-md-3">
 				{dinners.map((dinner) => (
 					<Dinner dinner={dinner}></Dinner>
 				))}
