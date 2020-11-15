@@ -15,7 +15,7 @@ const BreakFastStore = () => {
 		<div className="container">
 			<div className="row row-cols-1 row-cols-md-3">
 				{breakFasts.map((breakFast) => (
-					<BreakFast breakFast={breakFast}></BreakFast>
+					<BreakFast breakFast={breakFast} key={breakFast.key}></BreakFast>
 				))}
 			</div>
 		</div>

@@ -14,7 +14,7 @@ const DinnerStore = () => {
 		<div className="container">
 			<div className="row row-cols-1 row-cols-md-3">
 				{dinners.map((dinner) => (
-					<Dinner dinner={dinner}></Dinner>
+					<Dinner dinner={dinner} key={dinner.key}></Dinner>
 				))}
 			</div>
 		</div>

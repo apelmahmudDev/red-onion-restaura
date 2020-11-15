@@ -11,9 +11,9 @@ const LunchStore = () => {
 	}, []);
 	return (
 		<div className="container">
-			<div class="row row-cols-1 row-cols-md-3">
+			<div className="row row-cols-1 row-cols-md-3">
 				{lunches.map((lunch) => (
-					<Lunch key={lunch.id} lunch={lunch}></Lunch>
+					<Lunch key={lunch.key} lunch={lunch}></Lunch>
 				))}
 			</div>
 		</div>
