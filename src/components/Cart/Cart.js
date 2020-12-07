@@ -1,52 +1,70 @@
 import React, { useEffect, useState } from 'react';
 import './Cart.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import CartInfo from '../CartInfo/CartInfo';
 
 const Cart = () => {
 	const [cart, setCart] = useState([]);
+	console.log(cart.length);
 
 	//LOAD CART INFO FROM DATABASE
 	useEffect(() => {
 		fetch('http://localhost:4200/cart')
 			.then((res) => res.json())
 			.then((data) => setCart(data));
-    }, []);
+	}, []);
 
+	const styles = {
+		scroll: {
+			height: '320px',
+			overflow: 'scroll',
+			scrollBehavior: 'smooth',
+		},
+		placebtn: {
+			width: '100%',
+		}
+	};
 	return (
-		<div className="container">
-			<div className="row">
-				<div className="col-md-4">
+		<>
+			{cart.length === 0 ? <h5 className="text-danger">Your food's cart currently empty!</h5>:
+				<div>
+				<p>From <strong>Gulshan Plaza Restara GPR</strong></p>
+				<small>Arriving in 20-30 min</small>
+				<p>107 Rd No 8</p>
+				<div>
 					<table className="table">
 						<tbody>
 							{cart.map((food) => (
-								<tr key={food._id} className="table-row">
-									<td>
-										<img src={food.img} alt="" style={{ height: '80px' }} />
-									</td>
-									<td>
-										<h6 className="font-weight-bold">{food.name}</h6>
-										<h5 className="text-danger font-weight-bold">
-											${Number(food.price * food.qty).toFixed(2)}
-										</h5>
-										<small className="text-secondary">Delivery free</small>
-									</td>
-									<td>
-										<button className="btn text-secondary">
-											<FontAwesomeIcon icon={faMinus} />
-										</button>
-										<span>0{food.qty}</span>
-										<button className="btn text-secondary">
-											<FontAwesomeIcon icon={faPlus} />
-										</button>
-									</td>
-								</tr>
+								<CartInfo food={food} key={food.key}></CartInfo>
 							))}
 						</tbody>
 					</table>
 				</div>
-			</div>
-		</div>
+				<div className="mt-4">
+					<div className="d-flex justify-content-between">
+						<p>Subtotal * 4 item</p>
+						<p>$320.00</p>
+					</div>
+					<div className="d-flex justify-content-between">
+						<p>Tax</p>
+						<p>$5.00</p>
+					</div>
+					<div className="d-flex justify-content-between">
+						<p>Delivery fee</p>
+						<p>$2.00</p>
+					</div>
+					<div className="d-flex justify-content-between">
+						<p><strong>Total</strong></p>
+						<p>$327.00</p>
+					</div>
+					<button
+						className="btn bg-secondary text-light my-3"
+						style={styles.placebtn}
+					>
+						Place Order
+					</button>
+				</div>
+			</div>}
+		</>
 	);
 };
 

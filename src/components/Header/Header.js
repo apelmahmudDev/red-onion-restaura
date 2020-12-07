@@ -23,7 +23,7 @@ const Header = () => {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav ml-auto">
-						<Link className="nav-item nav-link" to="/cart">
+						<Link className="nav-item nav-link" to="/place_order">
 							<div className="d-flex align-items-center justify-content-center">
 								<FontAwesomeIcon icon={faShoppingCart} />{' '}
 								<span className="sr-only"></span>

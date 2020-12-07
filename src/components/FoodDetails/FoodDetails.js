@@ -12,7 +12,7 @@ import {
 
 const FoodDetails = () => {
 	const [cart, setCart] = useState([]);
-	const [isFoodAdd, setIsFoodAdd] = useState(null);
+	const [isFoodAdd, setIsFoodAdd] = useState(false);
 	const [quantity, setQuantity] = useState(1);
 	const [foods, setFoods] = useState([]);
 	const { foodKey } = useParams();

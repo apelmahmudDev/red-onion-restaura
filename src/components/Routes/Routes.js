@@ -1,36 +1,33 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import BreakFastStore from '../BreakFastStore/BreakFastStore';
 import Cart from '../Cart/Cart';
-import DinnerStore from '../DinnerStore/DinnerStore';
 import FoodDetails from '../FoodDetails/FoodDetails';
-import FoodNav from '../FoodNav/FoodNav';
+import FoodStore from '../FoodStore/FoodStore';
 import Header from '../Header/Header';
-import LunchStore from '../LunchStore/LunchStore';
+import PlaceOrder from '../PlaceOrder/PlaceOrder';
 
 const Routes = () => {
 	return (
 		<Router>
 			<Header></Header>
-			<FoodNav></FoodNav>
 			<Switch>
-				<Route path="/breakfast">
-					<BreakFastStore></BreakFastStore>
-				</Route>
 				<Route exact path="/">
-					<LunchStore></LunchStore>
+					<FoodStore />
 				</Route>
-				<Route path="/lunch">
-					<LunchStore></LunchStore>
+				<Route exact path="/breakfast">
+					<FoodStore />
 				</Route>
-				<Route path="/dinner">
-					<DinnerStore></DinnerStore>
+				<Route exact path="/lunch">
+					<FoodStore />
+				</Route>
+				<Route exact path="/dinner">
+					<FoodStore />
 				</Route>
 				<Route path="/foodDetails/food/:foodKey">
-					<FoodDetails></FoodDetails>
+					<FoodDetails />
 				</Route>
-				<Route path="/cart">
-					<Cart></Cart>
+				<Route path="/place_order">
+					<PlaceOrder />
 				</Route>
 				<Route path="*">
 					<h2 className="text-center text-danger mt-5 font-weight-bold">
